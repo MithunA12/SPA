@@ -33,7 +33,7 @@ const ViewerScreen = ({ channelNames, filename, annotationFilename, setChannelMa
     }, []);
 
     const fetchImages = () => {
-        fetch('http://192.168.1.24:5000/images')
+        fetch('http://192.168.1.14:5001/images')
             .then(response => response.json())
             .then(data => {
                 if (data.images) {
@@ -55,7 +55,7 @@ const ViewerScreen = ({ channelNames, filename, annotationFilename, setChannelMa
 
     const generateImages = (index) => {
         setIsLoading(true);
-        fetch('http://192.168.1.24:5000/generate_images', {
+        fetch('http://192.168.1.14:5001/generate_images', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -127,7 +127,7 @@ const ViewerScreen = ({ channelNames, filename, annotationFilename, setChannelMa
     const downloadCSV = () => {
         // Creates a link to download the CSV file
         const link = document.createElement('a');
-        link.href = `http://192.168.1.24:5000/download/${csvFile}`;
+        link.href = `http://192.168.1.14:5001/download/${csvFile}`;
         link.download = csvFile;
         document.body.appendChild(link);
         link.click();

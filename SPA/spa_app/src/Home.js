@@ -39,7 +39,7 @@ const Home = ({ setChannelNames, setFilename, setAnnotationFilename }) => {
         }
 
         // POST request to upload files
-        fetch('http://192.168.1.24:5000/upload', {
+        fetch('http://192.168.1.14:5001/upload', {
             method: 'POST',
             body: formData
         })

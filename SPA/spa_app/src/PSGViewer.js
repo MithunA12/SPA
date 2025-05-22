@@ -32,7 +32,7 @@ function PSGViewer({ images, spectrogram, csvFile, currentIndex, handlePreviousI
             {sleepStageImage && (
                 <div>
                     <img
-                        src={`http://192.168.1.24:5000/images/${sleepStageImage}`}
+                        src={`http://192.168.1.14:5001/images/${sleepStageImage}`}
                         alt={`Sleep Stage Image ${currentIndex + 1}`}
                         style={{ width: '30%', height: '30%' }}
                     />
@@ -47,7 +47,7 @@ function PSGViewer({ images, spectrogram, csvFile, currentIndex, handlePreviousI
                         {rawImage && (
                             <div>
                                 <img
-                                    src={`http://192.168.1.24:5000/images/${rawImage}`}
+                                    src={`http://192.168.1.14:5001/images/${rawImage}`}
                                     alt={`PSG Image ${currentIndex + 1}`}
                                     style={{ width: '80%', height: '80%' }}
                                 />
@@ -70,7 +70,7 @@ function PSGViewer({ images, spectrogram, csvFile, currentIndex, handlePreviousI
                         <div className="mt-3">
                             <p>Spectrogram</p>
                             <img
-                                src={`http://192.168.1.24:5000/images/${spectrogram}`}
+                                src={`http://192.168.1.14:5001/images/${spectrogram}`}
                                 alt="Spectrogram"
                                 style={{ width: '25%', height: '25%' }}
                             />

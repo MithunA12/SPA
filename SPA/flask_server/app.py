@@ -191,7 +191,7 @@ def generate_images():
 
     # Call script to generate spectrogram and CSV file with features
     edf_script_path = 'edf.py'
-    subprocess.run(['python', edf_script_path, raw_file_path, annotation_file_path, IMAGE_FOLDER])
+    subprocess.run(['python3', edf_script_path, raw_file_path, annotation_file_path, IMAGE_FOLDER])
 
     new_images = [f'raw_image_{i}.png' for i in range(index, index + 10)] + [f'sleep_stage_image_{i}.png' for i in range(index, index + 10)]
     spectrogram_image = 'spectrogram.png'
@@ -209,4 +209,4 @@ def download_file(filename):
     return send_from_directory(app.config['IMAGE_FOLDER'], filename, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
